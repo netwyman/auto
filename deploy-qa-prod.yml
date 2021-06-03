@@ -1,8 +1,11 @@
 ---
-- hosts: vCenter
+- hosts: {{type}}
   gather_facts: false
   connection: local
   #vars_files:
   #  - answerfile.yml
   roles:
      - vm-deploy-template
+  tasks:
+     - name: Print message
+       debug: msg="Server {{type}},is installed!"
