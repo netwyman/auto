@@ -1,8 +1,11 @@
 ---
-- hosts: vCenter
+- hosts: "{{type}}"
   gather_facts: false
   connection: local
   #vars_files:
   #  - answerfile.yml
   roles:
      - vm-remove-name
+  task: 
+     - name: Message
+       debug: "Server {{type}},is successfully removed!"
