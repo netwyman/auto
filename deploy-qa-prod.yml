@@ -1,5 +1,5 @@
 ---
-- hosts: vCenter
+- hosts: [master, rpe, datanode]
   gather_facts: false
   connection: local
   #vars_files:
