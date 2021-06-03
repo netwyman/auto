@@ -6,6 +6,6 @@
   #  - answerfile.yml
   roles:
      - vm-remove-name
-  task: 
+  tasks: 
      - name: Message
        debug: "Server {{type}},is successfully removed!"
