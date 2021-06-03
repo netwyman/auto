@@ -1,11 +1,11 @@
 ---
-- hosts: {{type}}
+- hosts: "{{type}}"
   gather_facts: false
   connection: local
   #vars_files:
   #  - answerfile.yml
   roles:
      - vm-deploy-template
-  #tasks:
-     #name: Message
-      # debug: msg= "Server {{type}},is installed!"
+  tasks:
+     - name: Message
+       debug: msg= "Server {{type}},is installed!"
