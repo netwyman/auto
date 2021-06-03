@@ -6,6 +6,6 @@
   #  - answerfile.yml
   roles:
      - vm-deploy-template
-  tasks:
-     - name: Message
-       debug: msg= "Server {{type}},is installed!"
+  #tasks:
+     #name: Message
+      # debug: msg= "Server {{type}},is installed!"
