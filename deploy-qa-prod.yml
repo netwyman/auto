@@ -9,4 +9,4 @@
   tasks:
      - name: Type of server information
        debug: 
-         msg: "Server {{type}},is installed!"
+         msg: "Server {{type}},Virtual machine is successfully installed!"
