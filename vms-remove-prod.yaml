@@ -7,5 +7,6 @@
   roles:
      - vm-remove-name
   tasks: 
-     - name: Message
-       debug: "Server {{type}},is successfully removed!"
+     - name: IP address info
+       debug: 
+         msg: "Server {{type}},is successfully removed!"

@@ -7,5 +7,6 @@
   roles:
      - vm-deploy-template
   tasks:
-     - name: Message
-       debug: msg= "Server {{type}},is installed!"
+     - name: IP address info
+       debug: 
+         msg: "Server {{type}},is installed!"
