@@ -1,6 +1,6 @@
 ---
 # Deploy a VM from a ISO using Ansible 'vmware_guest' module
-- name: Deploy VM from template
+- name: Deploy VM from iso
   vmware_guest:
     hostname: '{{ deploy_vCenter_host }}'
     username: '{{ deploy_vCenter_user }}'
@@ -28,6 +28,8 @@
       vm_cdrom:
        type: "iso"
        iso_path: "[Prod-VMs-Data (1)] Release-ISO/Motadata/7.6.400/motadata-master-1604-7.6.400.cf44558-new.iso"
+       controller_number: 0
+       unit_number: 0
     wait_for_ip_address: True
     state: present
   register: newvm 
