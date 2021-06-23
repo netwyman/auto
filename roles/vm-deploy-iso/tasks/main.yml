@@ -13,6 +13,7 @@
     folder: '{{ deploy_vCenter_folder }}'
     name: '{{ inventory_hostname }}'
     #state: poweredon
+    template: OS_Ubuntu_14_template
     annotation: "{{ guest_notes }}"
     guest_id: ubuntu64guest
     disk:
