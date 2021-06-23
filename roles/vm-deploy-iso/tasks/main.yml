@@ -26,11 +26,11 @@
     hardware:
       memory_mb: "{{ vm_memory | default(8192) }}"
       num_cpus: "{{ vm_cpu | default(8) }}"
-      vm_cdrom:
-       type: "iso"
-       iso_path: "[] /vmimages/tools-isoimages/linux.iso"
-       controller_number: 0
-       unit_number: 0
+    cdrom:
+      controller_number: 0
+      unit_number: 0
+      type: "iso"
+      iso_path: "[] /vmimages/tools-isoimages/linux.iso"
     wait_for_ip_address: True
     state: present
   register: newvm 
