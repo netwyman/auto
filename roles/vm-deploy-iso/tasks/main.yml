@@ -28,7 +28,7 @@
       num_cpus: "{{ vm_cpu | default(8) }}"
       vm_cdrom:
        type: "iso"
-       iso_path: "[Prod-VMs-Data (1)] Release-ISO/Motadata/7.6.400/motadata-master-1604-7.6.400.cf44558-new.iso"
+       iso_path: "[] /vmimages/tools-isoimages/linux.iso"
        controller_number: 0
        unit_number: 0
     wait_for_ip_address: True
