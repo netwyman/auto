@@ -12,7 +12,7 @@
     #resource_pool: '{{ deploy_vsphere_resourcepool }}'
     folder: '{{ deploy_vCenter_folder }}'
     name: '{{ inventory_hostname }}'
-    #state: poweredon
+    state: poweredon
     #template: OS_Ubuntu_14_template
     annotation: "{{ guest_notes }}"
     guest_id: ubuntu64guest
@@ -31,7 +31,7 @@
       controller_number: 0
       unit_number: 0
       type: "iso"
-      iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
+      #iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
     wait_for_ip_address: True
     state: present
   register: newvm 
