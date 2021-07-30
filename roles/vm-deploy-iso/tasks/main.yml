@@ -12,7 +12,7 @@
     #resource_pool: '{{ deploy_vsphere_resourcepool }}'
     folder: '{{ deploy_vCenter_folder }}'
     name: '{{ inventory_hostname }}'
-    #state: poweredon
+    state: poweredon
     #template: OS_Ubuntu_14_template
     annotation: "{{ guest_notes }}"
     guest_id: ubuntu64guest
@@ -30,10 +30,10 @@
     cdrom:
       controller_number: 0
       unit_number: 0
+      state: present
       type: "iso"
       iso_path: "[datastore18_2] testisomaster/motadata-master-1604-7.6.400.cf44558-new.iso"
-    wait_for_ip_address: True
-    state: present
+    wait_for_ip_address: true
   register: newvm 
  
 - name: IP address of Virtual Machine 
