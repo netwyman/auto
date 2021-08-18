@@ -32,7 +32,7 @@
       controller_number: 0
       unit_number: 0
       state: present
-      type: "iso"
+      type: iso
       iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
     wait_for_ip_address: true
   register: newvm 
