@@ -34,7 +34,7 @@
       #state: present
       type: iso
       iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
-    wait_for_ip_address: yes
+    wait_for_ip_address: true
   delegate_to: localhost
   register: newvm 
  
