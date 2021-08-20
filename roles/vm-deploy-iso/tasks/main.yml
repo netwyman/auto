@@ -29,12 +29,14 @@
       memory_mb: "{{ vm_memory | default(8192) }}"
       num_cpus: "{{ vm_cpu | default(8) }}"
     cdrom:
-      controller_number: 0
-      unit_number: 0
-      #state: present
+      #controller_number: 0
+      #unit_number: 0
+      state: present
       type: iso
       iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
-    wait_for_ip_address: true
+    customization:
+      autologon: True    
+    wait_for_ip_address: True
   delegate_to: localhost
   register: newvm 
  
