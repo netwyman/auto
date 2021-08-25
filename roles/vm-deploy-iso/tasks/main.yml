@@ -15,7 +15,7 @@
     state: poweredon
     template: "OS_Ubuntu_16_template"
     annotation: "{{ guest_notes }}"
-    guest_id: ubuntu64guest
+    guest_id: "null"  #ubuntu64guest
     disk:
     - size_gb: "{{ guest_disk_size | default(80) }}"
       type: thin
