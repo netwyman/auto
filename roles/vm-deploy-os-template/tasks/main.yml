@@ -30,6 +30,6 @@
     state: present
   register: newvm 
  
-- name: IP address info
+- name: IP address details
   debug:
     msg: "ip is : {{ newvm.instance.ipv4 }} "
