@@ -5,7 +5,7 @@
   #vars_files:
   #  - answerfile.yml
   roles:
-     - vm-deploy-iso
+     - vm-deploy-os-template
   tasks:
      - name: Type of serverOS information
        debug: 
