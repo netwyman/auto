@@ -7,6 +7,6 @@
   roles:
      - vm-deploy-iso
   tasks:
-     - name: Type of server information
+     - name: Type of serverOS information
        debug: 
          msg: "Server {{type}},Virtual machine is successfully installed!"

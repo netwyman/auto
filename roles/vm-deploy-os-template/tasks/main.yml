@@ -1,6 +1,6 @@
 ---
 # Deploy a VM from a ISO using Ansible 'vmware_guest' module
-- name: Deploy VM from iso
+- name: Deploy VM from template
   vmware_guest:
     hostname: '{{ deploy_vCenter_host }}'
     username: '{{ deploy_vCenter_user }}'
@@ -12,10 +12,9 @@
     #resource_pool: '{{ deploy_vsphere_resourcepool }}'
     folder: '{{ deploy_vCenter_folder }}'
     name: '{{ inventory_hostname }}'
-    state: poweredon
-    template: "OS_Ubuntu_16_template"
+    template: "{{ deploy_vCenter_vmtemplate }}"
+    #state: poweredon
     annotation: "{{ guest_notes }}"
-    guest_id: "null"  #ubuntu64guest
     disk:
     - size_gb: "{{ guest_disk_size | default(80) }}"
       type: thin
@@ -24,22 +23,13 @@
     - name: VM Network
       device_type: vmxnet3
       start_connected: True
-     #wait_for_ip_address: true
     hardware:
       memory_mb: "{{ vm_memory | default(8192) }}"
       num_cpus: "{{ vm_cpu | default(8) }}"
-    cdrom:
-      #controller_number: 0
-      #unit_number: 0
-      state: present
-      type: iso
-      iso_path: "[datastore18_2] test_ansi_OS_ISO/ubuntu-16.04.7-server-amd64.iso"
-    customization:
-      autologon: True    
-    wait_for_ip_address: true
-  delegate_to: localhost
+    wait_for_ip_address: True
+    state: present
   register: newvm 
  
-- name: IP address of Virtual Machine 
+- name: IP address info
   debug:
-    msg: "ip address of VM is : {{ newvm.instance.ipv4 }} "
+    msg: "ip is : {{ newvm.instance.ipv4 }} "
