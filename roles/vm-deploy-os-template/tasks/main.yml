@@ -1,6 +1,6 @@
 ---
 # Deploy a VM from a ISO using Ansible 'vmware_guest' module
-- name: Deploy VM from template
+- name: vm deploy os template
   vmware_guest:
     hostname: '{{ deploy_vCenter_host }}'
     username: '{{ deploy_vCenter_user }}'
