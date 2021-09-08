@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - vm-deploy-iso
+    - vm-deploy-os-template
