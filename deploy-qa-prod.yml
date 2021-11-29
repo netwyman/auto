@@ -1,12 +1,19 @@
 ---
+<<<<<<< HEAD
+- hosts: vCenter
+=======
 - hosts: "{{type}}"
+>>>>>>> 888273de5b2f3a6823c6cd132153cd847ea8274c
   gather_facts: false
   connection: local
   #vars_files:
   #  - answerfile.yml
   roles:
      - vm-deploy-template
+<<<<<<< HEAD
+=======
   tasks:
      - name: Type of server information
        debug: 
          msg: "Server {{type}},Virtual machine is successfully installed!"
+>>>>>>> 888273de5b2f3a6823c6cd132153cd847ea8274c
